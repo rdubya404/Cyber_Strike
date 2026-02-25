@@ -1,7 +1,9 @@
 # Cyber Strike - Project Status
 
 ## Overview
-A top-down cyberpunk helicopter shooter for iPhone using SpriteKit and Swift. Inspired by Jungle Strike with a modern cyberpunk aesthetic.
+A top-down cyberpunk helicopter shooter for iPhone using SpriteKit and Swift. Inspired by Jungle Strike/Desert Strike with a modern cyberpunk aesthetic.
+
+**CRITICAL: All game assets use TRUE TOP-DOWN perspective (90 degree overhead view)** - like looking at miniatures on a game board. You see ROTOR DISCS from above (not side profiles), building ROOFS (not sides), and tank treads from above.
 
 ## Current Status
 
@@ -51,7 +53,20 @@ A top-down cyberpunk helicopter shooter for iPhone using SpriteKit and Swift. In
 - [x] Game over screen (HUD.swift)
 - [x] Main menu with cyberpunk styling (MenuScene.swift)
 
-### Phase 7: Polish ✅
+### Phase 7: Art Assets ✅ (COMPLETED - TRUE TOP-DOWN PERSPECTIVE)
+- [x] Player helicopter (top-down view with rotor disc visible)
+- [x] Enemy helicopters (scout, gunship - top-down)
+- [x] Tanks (basic, heavy - top-down with treads visible)
+- [x] Turrets (anti-air - top-down)
+- [x] Drones (quadcopter - top-down)
+- [x] Boss gunship (large dual-rotor - top-down)
+- [x] Buildings (roofs visible from above - small, tall, corp, slum)
+- [x] Environment (roads, bridges, rooftop details)
+- [x] Effects (explosions, muzzle flashes, bullets, trails)
+- [x] UI elements (buttons, HUD, minimap, icons)
+- [x] Backgrounds (parallax layers, skies)
+
+### Phase 8: Polish ✅
 - [x] Particle effects (explosions, engine trails, muzzle flash) (ParticleEffects.swift)
 - [x] Screen shake on impacts (CameraController.swift)
 - [x] Sound effect placeholders (AudioManager.swift)
@@ -91,8 +106,56 @@ CyberStrike/
 │       ├── GameConstants.swift
 │       └── AudioManager.swift
 ├── CyberStrikeTests/
-└── CyberStrikeUITests/
+├── CyberStrikeUITests/
+└── Assets_TopDown/          <-- USE THESE ASSETS (TRUE TOP-DOWN)
+    ├── Player/
+    │   ├── Helicopter/      (helicopter_idle, bank_left, bank_right, damaged)
+    │   └── Effects/         (engine_exhaust_0-3)
+    ├── Enemies/
+    │   ├── Helicopters/     (enemy_scout, enemy_gunship)
+    │   ├── Tanks/           (tank_basic, tank_heavy)
+    │   ├── Turrets/         (turret_aa)
+    │   ├── Drones/          (drone_small)
+    │   └── Boss/            (boss_gunship)
+    ├── Environment/
+    │   ├── Buildings/       (building_small, tall, corp, slum)
+    │   ├── Roads/           (road_straight, intersection)
+    │   ├── Bridges/         (bridge_section)
+    │   ├── Rooftops/        (ac_unit, antenna)
+    │   └── Slums/           (slum_building)
+    ├── Effects/
+    │   ├── Explosions/      (explosion_small/medium/large_0-3)
+    │   ├── MuzzleFlashes/   (muzzle_machinegun/missile_0-2)
+    │   ├── Bullets/         (bullet_player, enemy, missile)
+    │   ├── Trails/          (trail_0-3)
+    │   ├── Shields/         (shield_energy)
+    │   └── Weather/         (smoke, fire, rain)
+    ├── Backgrounds/
+    │   ├── Parallax/        (parallax_far, mid, near)
+    │   ├── Skies/           (sky_night, dusk, storm)
+    │   └── Decorations/     (flying_car_1-2, smog_cloud)
+    └── UI/
+        ├── Buttons/         (button_normal, hover)
+        ├── HUD/             (healthbar_bg/fill, hud_corner)
+        ├── Icons/           (icon_health, missile, machinegun)
+        ├── minimap_frame
+        ├── minimap_player
+        └── minimap_enemy
 ```
+
+## Asset Locations
+
+### ⚠️ IMPORTANT: Use Assets_TopDown/ folder
+All game sprites are in `/root/.openclaw/workspace/Cyber_Strike/Assets_TopDown/`
+
+These assets are designed with **TRUE TOP-DOWN perspective** (90 degree overhead):
+- Helicopters show ROTOR DISCS (circles/ovals) from above, not side profiles
+- Buildings show ROOFS, not sides
+- Tanks show turrets and treads from above
+- All assets include @1x, @2x, @3x versions for iPhone displays
+
+### Old Assets (Deprecated)
+The `/root/.openclaw/workspace/Cyber_Strike/Assets/` folder contains old side-view assets and should not be used.
 
 ## Key Features Implemented
 
@@ -122,7 +185,7 @@ CyberStrike/
 - Laser: Instant hit, high speed
 
 ### 5. Visual Effects
-- Cyberpunk color scheme (neon cyan, pink, green)
+- Cyberpunk color scheme (neon cyan, pink, purple, green)
 - Glowing effects on all interactive elements
 - Animated neon signs with flicker
 - Particle explosions with multiple layers
@@ -134,16 +197,13 @@ CyberStrike/
 - Road networks
 - Decorative elements
 
-## Next Steps for Art Agent
-1. Create sprite textures for:
-   - Player helicopter (top-down view)
-   - Enemy tanks, choppers, turrets, drones
-   - Projectile sprites
-   - Building textures
-   - Power-up icons
-   - UI elements
+## Build Instructions
+1. Open `CyberStrike.xcodeproj` in Xcode 15+
+2. Select target device (iPhone/iPad)
+3. Build and run (⌘+R)
 
-2. Sound assets needed:
+## Next Steps
+1. Sound assets needed:
    - Machine gun fire
    - Missile launch
    - Laser shot
@@ -151,10 +211,7 @@ CyberStrike/
    - Engine sounds
    - UI sounds
 
-## Build Instructions
-1. Open `CyberStrike.xcodeproj` in Xcode 15+
-2. Select target device (iPhone/iPad)
-3. Build and run (⌘+R)
+2. Update code to reference Assets_TopDown/ folder
 
 ## Last Updated
-2026-02-25 - Core game engine complete
+2026-02-25 - All top-down art assets regenerated with TRUE top-down perspective (Desert Strike/Jungle Strike style)
