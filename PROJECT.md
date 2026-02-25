@@ -213,5 +213,28 @@ The `/root/.openclaw/workspace/Cyber_Strike/Assets/` folder contains old side-vi
 
 2. Update code to reference Assets_TopDown/ folder
 
+## Asset Updates
+
+### 2026-02-25 - Background Assets Fixed (TRUE Top-Down Perspective)
+**CRITICAL FIX**: Background parallax layers were regenerated to use TRUE top-down perspective.
+
+**Problem**: Original parallax layers showed side-view city skylines with buildings rising from the bottom (like looking at a horizon). This was WRONG for a Desert Strike-style top-down game.
+
+**Solution**: All background assets now use TRUE bird's eye view (90° overhead):
+- **parallax_far.png**: Faint dark building silhouettes scattered across entire image (no horizon)
+- **parallax_mid.png**: Closer buildings with rooftop details, viewed from above
+- **parallax_near.png**: Closest buildings with neon glow edges on some rooftops
+- **flying_car_1/2.png**: Small vehicle shapes seen from directly above
+- **smog_cloud.png**: Fog patches viewed from above (not horizon clouds)
+
+**Key Changes**:
+- NO horizon lines
+- NO "ground" at the bottom of images
+- Buildings appear as rectangles/rooftops from above
+- Parallax layers tile seamlessly in all directions
+- All assets include @1x, @2x, @3x versions
+
+### 2026-02-25 - All top-down art assets regenerated with TRUE top-down perspective (Desert Strike/Jungle Strike style)
+
 ## Last Updated
-2026-02-25 - All top-down art assets regenerated with TRUE top-down perspective (Desert Strike/Jungle Strike style)
+2026-02-25 - Background parallax layers fixed to TRUE top-down perspective
